@@ -5,7 +5,6 @@ from django.views.generic import TemplateView
 from django.views import generic
 from .models import  (
 		UserProfile,
-        Skill,
 		Blog,
 		Portfolio,
 		Testimonial,

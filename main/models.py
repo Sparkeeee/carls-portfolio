@@ -6,7 +6,8 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Skill(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # ForeignKey to associate the skill with a user
+
+    
     name = models.CharField(max_length=20, blank=True, null=True)
     score = models.IntegerField(default=80, blank=True, null=True)
     image = models.FileField(blank=True, null=True, upload_to="skills")
@@ -14,14 +15,6 @@ class Skill(models.Model):
     
     def __str__(self):
         return self.name
-    
-    def save(self, *args, **kwargs):
-        # Check if the user creating the skill is a superuser
-        if self.user.is_superuser:
-            super().save(*args, **kwargs)
-        else:
-            # If not a superuser, raise an exception or handle it as desired
-            raise PermissionError("Only superusers can create skills.")
 
 class UserProfile(models.Model):
 
