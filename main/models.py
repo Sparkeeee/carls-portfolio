@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.utils import timezone
 from django_summernote.fields import SummernoteTextField
 from cloudinary.models import CloudinaryField
 # Create your models here.
@@ -67,11 +68,12 @@ class Portfolio(models.Model):
     class Meta:
          ordering = ["name"]
 
-    date = models.DateTimeField(blank=True, null=True)
+    created_on = models.DateTimeField(default=timezone.now)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
     body = SummernoteTextField(blank=True, null=True)
     image = models.ImageField(upload_to='dir_on_cloudinary', blank=True)
+    url = models.URLField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
@@ -91,9 +93,9 @@ class Blog(models.Model):
 
     class Meta:
 
-        ordering = ["timestamp"]
+        ordering = ["-timestamp"]
 
-    timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(default=timezone.now)
     author = models.CharField(max_length=200, blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
@@ -117,7 +119,7 @@ class Blog(models.Model):
 class Certificate(models.Model):
 
 
-    date = models.DateTimeField(blank=True, null=True)
+    date = models.DateTimeField(default=timezone.now)
     name = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)

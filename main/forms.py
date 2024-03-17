@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactProfile
+from .models import ContactProfile, Portfolio
 
 
 class ContactForm(forms.ModelForm):
@@ -25,3 +25,20 @@ class ContactForm(forms.ModelForm):
 	class Meta:
 		model = ContactProfile
 		fields = ('name', 'email', 'message',)
+
+class UpdatePortfoliosForm(forms.ModelForm):
+
+	name = forms.CharField(max_length=100, required=True,
+		widget=forms.TextInput(attrs={
+			'placeholder': '*Name..',
+			
+			}))
+	
+	description = forms.CharField(max_length=1000, required=True, 
+		widget=forms.Textarea(attrs={
+			'placeholder': '*Message..',
+			'rows': 6,
+
+			}))
+
+	'description', 'body', 'url', 'image'
