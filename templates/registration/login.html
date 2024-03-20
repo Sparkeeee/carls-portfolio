@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h2 class="card-title text-center">{% trans "Sign In" %}</h2>
+          <form method="post" class="mx-auto" autocomplete="p">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="id_username" class="form-label">{% trans "Username" %}</label>
+              {{ form.username }}
+            </div>
+            <div class="mb-3">
+              <label for="id_password" class="form-label">{% trans "Password" %}</label>
+              {{ form.password }}
+            </div>
+            <button type="submit" class="btn btnPrimary btn-block mt-3">{% trans "Sign In" %}</button>
+          </form>
+          <p class="text-center mt-3">{% trans "If this is your first visit to the site and you want to get in touch please get in touch through the contact page. Login is only available with a username and password from the site owner." %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

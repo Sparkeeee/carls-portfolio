@@ -71,7 +71,7 @@ class Portfolio(models.Model):
     created_on = models.DateTimeField(default=timezone.now)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
-    body = SummernoteTextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='dir_on_cloudinary', blank=True)
     url = models.URLField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True)
@@ -123,6 +123,7 @@ class Certificate(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
+    image = models.ImageField(upload_to='dir_on_cloudinary', blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

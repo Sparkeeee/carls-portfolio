@@ -1,5 +1,7 @@
 from django import forms
 from .models import ContactProfile, Portfolio
+from django_summernote.fields import SummernoteTextFormField, SummernoteTextField
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class ContactForm(forms.ModelForm):
@@ -26,19 +28,13 @@ class ContactForm(forms.ModelForm):
 		model = ContactProfile
 		fields = ('name', 'email', 'message',)
 
+
+class PortfolioForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = ['name', 'description', 'body', 'url', 'image']
+
 class UpdatePortfoliosForm(forms.ModelForm):
-
-	name = forms.CharField(max_length=100, required=True,
-		widget=forms.TextInput(attrs={
-			'placeholder': '*Name..',
-			
-			}))
-	
-	description = forms.CharField(max_length=1000, required=True, 
-		widget=forms.Textarea(attrs={
-			'placeholder': '*Message..',
-			'rows': 6,
-
-			}))
-
-	'description', 'body', 'url', 'image'
+    class Meta:
+        model = Portfolio
+        fields = ['name', 'description', 'body', 'url', 'image']

@@ -15,7 +15,7 @@ font-family: 'Heebo', sans-serif; */
   --bold: 700;
   --black: 900;
   --lightBg: #e2d4e0;
-  font-size:40px;
+  font-size:14px;
 }
 html {
   scroll-behavior: smooth;
@@ -77,6 +77,7 @@ a, .btn {
 }
 .btnOutline {
 	border: 1px solid var(--primaryDarkColor);
+  background-color: var(--lightBg);
 	color: var(--primaryDarkColor);
 }
 .btnOutline:hover {
@@ -217,7 +218,7 @@ a, .btn {
 	-webkit-transition: background-color 500ms ease-in-out 250ms;
   -o-transition: background-color 500ms ease-in-out 250ms;
   transition: background-color 500ms ease-in-out 250ms;
-	background-color: #000;
+	background-color: #f1e2e2;
 	border: 1px solid rgba(0,0,0,0.2);
   margin-left: auto;
 }
@@ -230,7 +231,7 @@ a, .btn {
   display: block;
   width: 18px;
   height: 2px;
-  background-color: #000;
+  background-color: #f6f3f3;
   -webkit-transition: transform 500ms ease-in-out;
   -o-transition: transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
@@ -245,7 +246,7 @@ a, .btn {
   display: none;
 }
 .navToggleActive .navToggle {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #f6f3f3;
   transition-delay: 0s;
 }
 .navToggleActive .navToggle:before {
@@ -410,7 +411,10 @@ a, .btn {
   border-bottom: 1px solid #E0E0E0;
 }
 
-
+.modal {
+  display: block;
+  position: relative;
+}
 
 .testimonialCol {
   padding-top: 35px;
@@ -490,7 +494,7 @@ body.navToggleActive {
 
 /* portfolio page */
 .innerPageBannerCol {
-	padding: 180px 0 150px;
+	padding: 180px 0 60px;
 }
 .portfolioContentMain {
   position: relative;
@@ -557,9 +561,13 @@ body.navToggleActive {
   	padding: 30px 0;
   }
   .innerPageBannerCol {
-  	padding: 150px 0 100px;
+  	padding: 80px 0 60px;
   }
 }
+
+ #add-new-entry{
+ text-align: center ;
+ }
 
 @media (max-width:991px) {
   .sliderOuter .swiper-button-next.swiperBtnStyle {

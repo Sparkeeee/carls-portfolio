@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin, SummernoteModelAdminMixin
 from . models import (
     UserProfile,
     ContactProfile,
@@ -24,8 +25,9 @@ class TestimonialAdmin(admin.ModelAdmin):
 
 
 @admin.register(Portfolio)
-class PortfolioAdmin(admin.ModelAdmin):
+class PortfolioAdmin(SummernoteModelAdmin):
     list_display = ('id','name','is_active')
+    summernote_fields = '__all__'
     readonly_fields = ('slug',)
 
 @admin.register(Blog)

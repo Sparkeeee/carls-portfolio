@@ -2,13 +2,17 @@
 
 <!-- Start Navigation Bar -->
 
+<!-- Start Navigation Bar -->
+
 <header>
     <div class="headerCol">
     <div class="container-fluid">
         <div class="row align-items-center">
         <div class="col-1">
-            <div class="logoCol"><a href="{% url 'main:home' %}"><img src="{% static 'images/logo-mini.png' %}" alt="..."></a></div>
+            <div class="logoCol"><a href="{% url 'main:home' %}"><img src="{% static 'images/logo-mini.png' %}" alt="..."></a>
         </div>
+        </div>
+        <div class="col-2"><h4 style="color:rgb(255, 255, 255)">c-sparks-fly.net</h4> </div>
         <div class="col">
             <div class="d-md-none">
             <button class="navToggle">
@@ -17,12 +21,36 @@
             </div>
             <div class="navCollapseCol">
             <div class="navCol">
-                <ul>            
+                
+                <ul>           
                 <li><a href="{%url 'main:home'%}">Home</a></li>
                 <li><a href="{%url 'main:portfolios' %}">Portfolio</a></li>
                 <li><a href="{% url 'main:blogs' %}">Blog</a></li>
                 <li><a href="{%url 'main:contact'%}">Contact</a></li>
-                <li><a href="{%url 'main:dashboard'%}">Dashboard</a></li>
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a href="{% url 'main:dashboard' %}" class="nav-link">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="{% url 'logout' %}" method="post" id="logout-form">
+                                {% csrf_token %}
+                                <a href="#" class="nav-link" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                            </form>
+                        </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <form action="{% url 'logout' %}" method="post" id="logout-form">
+                            {% csrf_token %}
+                            <a href="#" class="nav-link" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                        </form>
+                    </li>
+                    {% endif %}
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="nav-link">Login</a>
+                    </li>
+                {% endif %}
                 </ul>
             </div>
             </div>
@@ -31,5 +59,8 @@
     </div>
     </div>
 </header>
+
+<!-- End Navigation Bar -->
+
 
 <!-- End Navigation Bar -->
