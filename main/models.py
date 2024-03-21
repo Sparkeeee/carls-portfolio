@@ -21,7 +21,7 @@ class UserProfile(models.Model):
 
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to='dir_on_cloudinary', blank=True)
+    image = models.ImageField(upload_to='dir_on_cloudinary', blank=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     skills = models.ManyToManyField(Skill, blank=True)

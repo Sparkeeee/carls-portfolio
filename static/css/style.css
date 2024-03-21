@@ -1,7 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Heebo:wght@400;500;700;900&display=swap');
 /* font-family: 'Courier Prime', monospace;
 font-family: 'Heebo', sans-serif; */
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 1deg;
+    inherits: false;
+}
+
 :root {
   --primaryColor: #9C07B6;
   --primaryDarkColor: #3D0048;
@@ -15,7 +21,15 @@ font-family: 'Heebo', sans-serif; */
   --bold: 700;
   --black: 900;
   --lightBg: #e2d4e0;
-  font-size:14px;
+  --weather-1: #89eade;
+  --weather-2: #4ae1d0;
+  --weather-3: #0da392;
+  --weather-4: #0a7467;
+  --weather-5: #0fc280;
+  --solar-1:  #f1f69a;
+  --solar-2:  #f8e624;
+  --solar-3:  #fac85c;
+  font-size:18px;
 }
 html {
   scroll-behavior: smooth;
@@ -24,8 +38,76 @@ body {
   font-family: var(--baseFont);
   color: var(--baseColor);
   line-height: normal;
-  background-color: var(--secondaryColor)
+  background-color: var(--secondaryColor);
+  
 }
+.weather-card{
+    /* height: 100vh; */
+    width: 100vw;
+    /* position: relative; */
+    background-color: var(--secondaryColor);
+/* 
+}
+.weather-card::before,
+.weather-card::after {
+    content: "";
+    position: absolute; */
+    inset: 0;
+    background: linear-gradient(
+    var(--gradient-angle),
+     var(--weather-1),
+     var(--weather-2),
+     var(--secondaryColor),
+     var(--secondaryColor),
+     var(--weather-5));
+     animation: rotation 20s linear infinite;
+}
+
+.weather-card::after {
+    filter: blur(3.5rem);
+}
+
+.solar-card{
+  aspect-ratio: 1/1;
+  width: auto;
+  position: relative;
+  background-color: var(--baseColor);
+  border-radius: 50%;
+
+}
+.solar-card::before,
+.solar-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+  var(--gradient-angle),
+  var(--baseColor),
+   /* var(--solar-1),
+   var(--solar-2),
+   var(--baseColor), */
+   var(--solar-1),
+   var(--solar-2),
+   var(--solar-3),
+   var(--solar-2));
+   border-radius: 50%;
+   animation: rotation 0.2s linear infinite;
+}
+
+.solar-card::after {
+  filter: blur(0.75rem);
+}
+
+
+@keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
 ul {
   margin: 0;
   padding: 0;
@@ -165,7 +247,7 @@ a, .btn {
 	color: var(--lightBg);
   font-weight: var(--medium);
   display: inline-block;
-  position: relative;
+  /* position: relative; */
 }
 .navCol a:hover {
   color: var(--primaryColor);
@@ -313,15 +395,16 @@ a, .btn {
   width: 300px;
 }
 .pLbl {
-  display: block;
+  display: none;
   width: 50px;
   text-align: right;
+  
 }
 
 .progress.progressStyle {
-	height: 8px;
-	padding: 1px;
-	background-color: var(--secondaryColor);
+	height: 14px;
+	padding: 2.5px;
+	background-color:#3D0048;
 	border-radius: 3px;
 }
 .progressStyle .progress-bar {
@@ -470,10 +553,13 @@ body.navToggleActive {
 .footerCol {
   padding: 50px 0;
   text-align: center;
+  
 }
 .socialCol li {
   display: inline-block;
 }
+
+
 .socialCol li + li {
   padding-left: 35px;
 }
@@ -483,14 +569,11 @@ body.navToggleActive {
   -o-object-fit: contain;
   object-fit: contain;
 }
-.copyrightCol {
-	padding: 20px 0 0;
-  font-size: 14px;
-}
-.copyrightCol p {
-	margin: 0;
-}
 
+#github {
+  width: 36px;
+  font-size: 40px;
+}
 
 /* portfolio page */
 .innerPageBannerCol {
@@ -788,4 +871,15 @@ input[type=text], input[type=email], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical
+}
+
+@media screen and (max-width: 770px) {
+.solar-card::after {
+  display:none;
+}
+
+/* .media-flex{
+  display: flex;
+  justify-content: space-between;
+} */
 }
