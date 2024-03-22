@@ -37,7 +37,7 @@ class ContactProfile(models.Model):
         ordering = ["timestamp"]
 
     timestamp = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(verbose_name="Name",max_length=100)
+    name = models.CharField(verbose_name="Name", max_length=100)
     email = models.EmailField(verbose_name="Email")
     message = models.TextField(verbose_name="Message")
 

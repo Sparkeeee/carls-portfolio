@@ -75,7 +75,7 @@ Start Content
         {% for t in testimonials %}
         {% if t.is_active %}
         <div class="swiper-slide">
-          <div class="testimonialCard">
+          <div class="testimonialCard p-2">
             <div class="row align-items-center">
               <div class="col-sm-auto">
                 <div class="tImgCol">
@@ -245,20 +245,23 @@ Start Content
         <div class="col-auto">
           <a href="{% url 'main:blogs' %}" class="simpleLink">View all</a>
         </div>
-      </div>s
+      </div>
       <div class="row g-3">
       {% for b in blogs %}
       {% if b.is_active %}
-        <div class="col-lg-6">
-          <div class="cardStyle1">
-            <h4 class="mdTitle cs1Title"><a href="{% url 'main:blog' slug=b.slug %}">{{b.name}}</a></h4>
-            <ul class="cardOptionCol">
-              <li>{{b.timestamp.date}}</li>
-              <li>{{b.author}}</li>
-            </ul>
-            <p>{{b.description}}</p>
-          </div>
+      <div class="col-lg-6">
+        <div class="cardStyle1">
+          <h4 class="mdTitle cs1Title"><a href="{% url 'main:blog' slug=b.slug %}">{{ b.name }}</a></h4>
+          <ul class="cardOptionCol">
+            <li>{{ b.timestamp.date }}</li>
+            <li>{{ b.author }}</li>
+          </ul>
+          <!-- Display the image -->
+          <img src="{{ b.image.url }}" alt="{{ b.name }}" class="img-fluid">
+          <p>{{ b.description }}</p>
         </div>
+      </div>
+      
         {% endif %}
         {% endfor %}
 

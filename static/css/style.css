@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Heebo:wght@400;500;700;900&display=swap');
-/* font-family: 'Courier Prime', monospace;
-font-family: 'Heebo', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Electrolize&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @property --gradient-angle {
     syntax: "<angle>";
@@ -12,20 +12,23 @@ font-family: 'Heebo', sans-serif; */
   --primaryColor: #9C07B6;
   --primaryDarkColor: #3D0048;
   --primaryHoverColor: #900AA8;
-  --secondaryColor: #10dfab;
+  --secondaryColor: #097d60;
   --baseColor: #041d62;
-  --baseFont: 'Heebo', sans-serif;
-  --titleFont: 'Courier Prime', monospace;
+  --contentColor: #e3f4f5;
+  --terminalColor: #41485d ;
+  --baseFont: "MuseoModerno", sans-serif;
+  --titleFont: "Audiowide", sans-serif;
+  --contentFont: "Electrolize", sans-serif;
   --regular: 400;
   --medium: 500;
   --bold: 700;
   --black: 900;
   --lightBg: #e2d4e0;
-  --weather-1: #89eade;
-  --weather-2: #4ae1d0;
-  --weather-3: #0da392;
-  --weather-4: #0a7467;
-  --weather-5: #0fc280;
+  --weather-1: #094b44;
+  --weather-2: #134a43;
+  --weather-3: #103d51;
+  --weather-4: #2e3a51;
+  --weather-5: #41485d ;
   --solar-1:  #f1f69a;
   --solar-2:  #f8e624;
   --solar-3:  #fac85c;
@@ -35,10 +38,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: var(--baseFont);
-  color: var(--baseColor);
+  font-family: var(--contentFont);
+  color: var(--lightBg);
   line-height: normal;
-  background-color: var(--secondaryColor);
+  background-color: var(--terminalColor);
   
 }
 .weather-card{
@@ -55,10 +58,10 @@ body {
     inset: 0;
     background: linear-gradient(
     var(--gradient-angle),
-     var(--weather-1),
-     var(--weather-2),
+     var(--baseColor),
+     var(--baseColor),
      var(--secondaryColor),
-     var(--secondaryColor),
+     var(--weather-5),
      var(--weather-5));
      animation: rotation 20s linear infinite;
 }
@@ -84,9 +87,6 @@ body {
   background: linear-gradient(
   var(--gradient-angle),
   var(--baseColor),
-   /* var(--solar-1),
-   var(--solar-2),
-   var(--baseColor), */
    var(--solar-1),
    var(--solar-2),
    var(--solar-3),
@@ -221,6 +221,7 @@ a, .btn {
 
 .headerCol {
   background-color: var(--baseColor);
+  font-family:var(--baseFont);
 	padding: 18px 0;
 	-webkit-transition: all 300ms ease-in-out 0s;
 	-o-transition: all 300ms ease-in-out 0s;
@@ -354,6 +355,7 @@ a, .btn {
   height: 240px;
   border-radius: 50%;
   position: relative;
+  border: 3 px solid var(--primaryColor);
 }
 .bannerUserImg img {
   width: 100%;
@@ -366,8 +368,6 @@ a, .btn {
 .bannerUserImg::before {
   content: "";
   position: absolute;
-  
-  
   width: 100%;
   height: 100%;
   background-color: #EDF7FA;
@@ -404,7 +404,7 @@ a, .btn {
 .progress.progressStyle {
 	height: 14px;
 	padding: 2.5px;
-	background-color:#3D0048;
+	background-color: var(--primaryColor);
 	border-radius: 3px;
 }
 .progressStyle .progress-bar {
@@ -546,10 +546,26 @@ body.navToggleActive {
 	overflow: hidden;
 }
 
-
-
+/* Forms */
+.form-control {
+  width: 100%;
+}
 
 /* footer */
+
+footer{
+  color: var(--lightBg);
+  background-color: var(--baseColor);
+  font-family:var(--baseFont);
+}
+
+footer a {
+  color: inherit;
+}
+footer a:hover {
+  color: var(--primaryColor);
+}
+
 .footerCol {
   padding: 50px 0;
   text-align: center;
@@ -573,6 +589,7 @@ body.navToggleActive {
 #github {
   width: 36px;
   font-size: 40px;
+  
 }
 
 /* portfolio page */

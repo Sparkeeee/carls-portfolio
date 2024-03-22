@@ -2,9 +2,9 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-3">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-5">
       <div class="card mt-5">
         <div class="card-body">
           <h2 class="card-title text-center">{% trans "Sign In" %}</h2>
@@ -12,13 +12,15 @@
             {% csrf_token %}
             <div class="mb-3">
               <label for="id_username" class="form-label">{% trans "Username" %}</label>
-              {{ form.username }}
+              <input type="text" class="form-control" id="id_username" name="username" placeholder="{% trans "Enter username" %}">
             </div>
             <div class="mb-3">
-              <label for="id_password" class="form-label">{% trans "Password" %}</label>
-              {{ form.password }}
+                <label for="id_password" class="form-label">{% trans "Password" %}</label>
+                <input type="password" class="form-control" id="id_password" name="password" placeholder="{% trans "Enter password" %}">
             </div>
-            <button type="submit" class="btn btnPrimary btn-block mt-3">{% trans "Sign In" %}</button>
+            <div class="text-center"> 
+              <button type="submit" class="btn btnPrimary">{% trans "Sign In" %}</button>
+            </div>
           </form>
           <p class="text-center mt-3">{% trans "If this is your first visit to the site and you want to get in touch please get in touch through the contact page. Login is only available with a username and password from the site owner." %}</p>
         </div>
