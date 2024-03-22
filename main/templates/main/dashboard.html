@@ -6,7 +6,7 @@
 <section>
   <div class="innerPageBannerCol">
     <div class="container">
-      <div class="row g-3 g-md-3  align-items-center">
+      <div class="row g-3 g-md-3 align-items-center">
         <div class="col-md-8">
           <div class="bannerContent">
             <h2>Make your updates here</h2>
@@ -24,7 +24,7 @@
 </section>
 
 <section>
-  <div class="lightBg">
+  <div class="lighterBg">
     <div class="container-xl">
       <div class="row">
         <h4 class="col-6 offset-3 pt-2 pb-2 text-center text-decoration-underline" id="add-new-entry">Add or Edit a Portfolio exhibit below.</h4>
@@ -41,8 +41,7 @@
                     </a>
                 </li>
             {% endfor %}
-        </ul>
-        
+          </ul>
         </div>
       </div>
       <div class="col">
@@ -54,22 +53,24 @@
           <!-- Form fields -->
           {{ form.as_p }}
           <!-- Submit button -->
-          <div class="col-4 offset-4">
-              <input class="btn btnPrimary mb-3" type="submit" value="Submit">
+          <div class="text-center">
+            <input class="btn btnPrimary mb-3" type="submit" value="Submit">
           </div>
-      </form>
-  <div class="row">
-      {% for portfolio in portfolios %}
-    <div col-1>
-        <h3>{{ portfolio.name }}</h3>
-        <!-- Add delete button with a form -->
-        <form class="btn btn-danger" method="post" action="{% url 'main:portfolio_delete' portfolio.id %}">
-            {% csrf_token %}
-            <button type="submit">Delete</button>
         </form>
-    </div>
-  </div>
-{% endfor %}
+      <div class="portfolio-items">
+        <div class="row">
+          {% for portfolio in portfolios %}
+          <div class="col-auto mb-3">
+            <h3 class="portfolio-title">{{ portfolio.name }}</h3>
+            <!-- Add delete button with a form -->
+            <form class="d-inline" method="post" action="{% url 'main:portfolio_delete' portfolio.id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       </div>
     </div>
   </div>

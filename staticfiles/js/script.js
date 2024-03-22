@@ -85,3 +85,7 @@ $('.navToggle').on('click', function (e) {
       },
     },
   });
+
+  document.querySelector('.dropdown-menu').addEventListener('mouseleave', function() {
+    this.classList.remove('show');
+  });

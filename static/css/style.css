@@ -24,6 +24,7 @@
   --bold: 700;
   --black: 900;
   --lightBg: #e2d4e0;
+  --lighterBg: #6d7273;
   --weather-1: #094b44;
   --weather-2: #134a43;
   --weather-3: #103d51;
@@ -45,16 +46,8 @@ body {
   
 }
 .weather-card{
-    /* height: 100vh; */
     width: 100vw;
-    /* position: relative; */
     background-color: var(--secondaryColor);
-/* 
-}
-.weather-card::before,
-.weather-card::after {
-    content: "";
-    position: absolute; */
     inset: 0;
     background: linear-gradient(
     var(--gradient-angle),
@@ -67,7 +60,15 @@ body {
 }
 
 .weather-card::after {
-    filter: blur(3.5rem);
+    filter: blur(2.5rem);
+}
+
+.moody-gradient{
+  linear-gradient: (90deg, #41485d, #465172, #545c76, #465172, #41485d);
+}
+
+.lighter-gradient{
+  linear-gradient: (90deg, blue, red);
 }
 
 .solar-card{
@@ -142,6 +143,10 @@ a, .btn {
 .lightBg {
   background-color: var(--lightBg);
 }
+
+.lighterBg {
+  background-color: var(--lighterBg);
+} 
 
 .btn {
   font-size: 20px;
@@ -385,7 +390,7 @@ a, .btn {
   padding: 35px 0;
 }
 .ksText {
-	display: block;
+	display: none;
 	padding-top: 10px;
 }
 .keySkillCard + .keySkillCard {
@@ -394,6 +399,13 @@ a, .btn {
 .keySkillCol {
   width: 300px;
 }
+
+.ksIconCol {
+  max-width: 35px;
+  padding-top: 12px;
+  margin-left: 3rem;
+}
+
 .pLbl {
   display: none;
   width: 50px;
@@ -433,7 +445,7 @@ a, .btn {
 }
 .cardStyle1 {
 	padding: 25px;
-	background-color: var(--bs-white);
+	background-color: var(--terminalColor);
 	border-radius: 4px;
   height: 100%;
 }
@@ -493,6 +505,19 @@ a, .btn {
   padding: 20px 0;
   border-bottom: 1px solid #E0E0E0;
 }
+
+.portfolio-items .portfolio-title {
+  max-width: 200px; /* Adjust the value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color:#3D0048;
+  color: white;
+}
+
 
 .modal {
   display: block;
