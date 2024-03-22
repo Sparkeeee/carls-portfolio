@@ -136,3 +136,11 @@ class BlogView(ListView):
 class BlogDetailView(DetailView):
     model = Blog
     template_name = "main/blog-detail.html"
+
+    def get_queryset(self):
+        return Blog.objects.filter(slug=self.kwargs['slug'], is_active=True)
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset)
+        return obj
