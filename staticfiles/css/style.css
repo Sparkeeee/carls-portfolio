@@ -73,7 +73,7 @@ body {
 
 .solar-card{
   aspect-ratio: 1/1;
-  width: auto;
+  width: 2.8rem;
   position: relative;
   background-color: var(--baseColor);
   border-radius: 50%;
@@ -93,7 +93,7 @@ body {
    var(--solar-3),
    var(--solar-2));
    border-radius: 50%;
-   animation: rotation 0.2s linear infinite;
+   animation: rotation 0.1s linear infinite;
 }
 
 .solar-card::after {
@@ -226,8 +226,10 @@ a, .btn {
 
 .headerCol {
   background-color: var(--baseColor);
+  overflow: none;
   font-family:var(--baseFont);
 	padding: 18px 0;
+  z-index: 99;
 	-webkit-transition: all 300ms ease-in-out 0s;
 	-o-transition: all 300ms ease-in-out 0s;
 	transition: all 300ms ease-in-out 0s;
@@ -390,7 +392,7 @@ a, .btn {
   padding: 35px 0;
 }
 .ksText {
-	display: block;
+	display: none;
 	padding-top: 10px;
 }
 .keySkillCard + .keySkillCard {
@@ -399,6 +401,14 @@ a, .btn {
 .keySkillCol {
   width: 300px;
 }
+
+.ksIconCol {
+  max-width: 50px;
+  padding-top: 10px;
+  margin-left: 4rem;
+  
+}
+
 .pLbl {
   display: none;
   width: 50px;
@@ -506,10 +516,16 @@ a, .btn {
   white-space: nowrap;
 }
 
+.UpdatePortfoliosForm{
+  width: 100%;
+  
+}
+
 .dropdown-menu a:hover {
   background-color:#3D0048;
   color: white;
 }
+
 
 .modal {
   display: block;
@@ -740,6 +756,7 @@ footer a:hover {
 @media (max-width:767px) {
   .navCollapseCol {
     position: fixed;
+    overflow: none;
     top: 0;
     left: 0;
     bottom: 0;
@@ -833,16 +850,17 @@ footer a:hover {
   .navCol a {
     opacity: 0.8;
   }
-  .logoCol img {
+  /* .logoCol img {
   	max-width: 50px;
     max-height: 50px;
-  }
+  } */
  
 
   .fixedHeader .headerCol,  .headerCol {
   	padding: 10px 0;
   }
 }
+
 
 @media(max-width:575px) {
   .sliderOuter .swiper-button-prev.swiperBtnStyle ,
@@ -894,6 +912,13 @@ footer a:hover {
   .swiper-button-next.swiperBtnStyle::after, .swiper-button-prev.swiperBtnStyle::after {
   	font-size: 14px;
   }
+
+    .ksIconCol {
+    max-width: 50px;
+  
+    margin-left: 1rem;
+    
+  }
 }
 
 input[type=text], input[type=email], select, textarea {
@@ -917,3 +942,4 @@ input[type=text], input[type=email], select, textarea {
   justify-content: space-between;
 } */
 }
+
