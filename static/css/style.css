@@ -93,7 +93,7 @@ body {
    var(--solar-3),
    var(--solar-2));
    border-radius: 50%;
-   animation: rotation 0.2s linear infinite;
+   animation: rotation 0.1s linear infinite;
 }
 
 .solar-card::after {
