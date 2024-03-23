@@ -1,114 +1,115 @@
-$(document).ready(function() {
-  // Initialize dropdown toggles
-  $('.dropdown-toggle').dropdown();
+// 
 
-  // Function to update portfolio
+  $(document).ready(function() {
+    // Find the dropdown element and initialize it
+    $('.dropdown-toggle').dropdown();
+  });
+  
   function updatePortfolio(portfolioId) {
-    // Set the operation to 'update'
-    $('#id_operation').val('update');
+    
+    document.getElementById('id_operation').value = 'update';
     // Set the portfolio_id field
-    $('#id_portfolio_id').val(portfolioId);
+    document.getElementById('id_portfolio_id').value = portfolioId;
     // Optionally, populate other fields in the form based on the selected portfolio item
   }
-
-  // Function to populate form with portfolio data
+  
   function populateForm(portfolioId) {
-    // Use AJAX to fetch the portfolio item's data
+    
     fetch(`/portfolio/data/${portfolioId}/`)
-      .then(response => response.json())
-      .then(data => {
-        // Populate form fields
-        $('#id_operation').val('update');
-        $('#id_portfolio_id').val(portfolioId);
-        $('#id_name').val(data.name);
-        $('#id_description').val(data.description);
-        $('#id_body').val(data.body);
-        $('#id_url').val(data.url);
-        $('#id_image').val(data.image);
-
-        // Optionally, change the form's action to point to the update URL
-        $('#UpdatePortfoliosForm').attr('action', `/portfolio/data/${portfolioId}/`);
-      })
-      .catch(error => console.error('Error:', error));
-  }
-
-  // Toggle navigation on small screens
+        .then(response => response.json())
+        .then(data => {
+            
+            document.getElementById('id_operation').value = 'update';
+            document.getElementById('id_portfolio_id').value = portfolioId;
+            document.getElementById('id_name').value = data.name;
+            document.getElementById('id_description').value = data.description;
+            document.getElementById('id_body').value = data.body;
+            document.getElementById('id_url').value = data.url;
+            document.getElementById('id_image').value = data.image;
+            
+            console.log("Portfolio ID:", portfolioId);
+            // Optionally, change the form's action to point to the update URL
+            document.getElementById('UpdatePortfoliosForm').action = `/portfolio/data/${portfolioId}/`;
+  
+            // Optionally, change the operation hidden field to 'update'
+            document.getElementById('id_operation').value = 'update';
+        })
+        .catch(error => console.error('Error:', error));
+      }
+  
+  
   $('.navToggle').on('click', function (e) {
-    e.preventDefault();
-    $('body').toggleClass('navToggleActive');
-    $('.navToggle').toggleClass('active');
-  });
-
-  // Handle fixed header on scroll
-  $(window).scroll(function(){
-    if ($(this).scrollTop() > 10) {
-      $('body').addClass('fixedHeader');
-    } else {
-      $('body').removeClass('fixedHeader');
-    }
-  });
-
-  // Initialize Swiper for testimonials
-  var testimonialSwiper = new Swiper(".testimonialSwiper", {
-    navigation: {
-      nextEl: ".test-swiper-button-next",
-      prevEl: ".test-swiper-button-prev",
-    },
-  });
-
-  // Initialize Swiper for certificates
-  var certificatesSwiper = new Swiper(".certificatesSlider", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".cert-swiper-button-next",
-      prevEl: ".cert-swiper-button-prev",
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+      e.preventDefault();
+      $('body').toggleClass('navToggleActive');
+    });
+    
+    
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 10) {
+        $('body').addClass('fixedHeader');
+      } else {
+        $('body').removeClass('fixedHeader');
+      }
+    });
+    
+    
+    var swiper = new Swiper(".testimonialSwiper", {
+      navigation: {
+        nextEl: ".test-swiper-button-next",
+        prevEl: ".test-swiper-button-prev",
       },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+    });
+    
+    var blogSwiper = new Swiper(".blogSlider", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".blog-swiper-button-next",
+        prevEl: ".blog-swiper-button-prev",
       },
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+      pagination: {
+        el: ".blog-swiper-pagination",
+        clickable: true,
       },
-    },
-  });
-
-  // Initialize Swiper for blog slider
-  var blogSwiper = new Swiper(".blogSlider", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: ".blog-swiper-button-next",
-      prevEl: ".blog-swiper-button-prev",
-    },
-    pagination: {
-      el: ".blog-swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
       },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+    });
+    
+    var swiper = new Swiper(".certificatesSlider", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+      navigation: {
+        nextEl: ".cert-swiper-button-next",
+        prevEl: ".cert-swiper-button-prev",
       },
-    },
-  });
-});
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+      },
+    });
