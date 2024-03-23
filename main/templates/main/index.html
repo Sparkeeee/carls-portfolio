@@ -49,11 +49,11 @@ Start Content
             <h1 class="xlTitle pb-3">Hi, I'm {{me.first_name|title}}, <br> a {{me.userprofile.title}} </br></h1>
             <p>{{me.userprofile.bio}}</p>
             <div class="bannerBtnCol">
-              <div class="row">
-                <div class="col-auto">
+              <div class="row text-center">
+                <div class="col-auto mt-2">
                   <a download href="{{me.userprofile.cv.url}}" class="btn btnPrimary">Download CV</a>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto mt-2">
                   <a href="{% url 'main:contact' %}" class="btn btnOutline">Contact</a>
                 </div>
               </div>

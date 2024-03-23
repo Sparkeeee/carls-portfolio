@@ -5,7 +5,7 @@
 @property --gradient-angle {
     syntax: "<angle>";
     initial-value: 1deg;
-    inherits: false;
+    inherits: True;
 }
 
 :root {
@@ -228,19 +228,17 @@ a, .btn {
   background-color: var(--baseColor);
   overflow: none;
   font-family:var(--baseFont);
-	padding: 18px 0;
   z-index: 99;
 	-webkit-transition: all 300ms ease-in-out 0s;
 	-o-transition: all 300ms ease-in-out 0s;
 	transition: all 300ms ease-in-out 0s;
 	position: fixed;
-  z-index: 99;
-	left: 0;
+  left: 0;
 	right: 0;
 	top: 0;
 }
 .fixedHeader .headerCol {
-	padding: 10px 0;
+	padding: 15px 0;
 	-webkit-box-shadow: 0 0 24px rgba(0,0,0,0.1);
   box-shadow: 0 0 24px rgba(0,0,0,0.1);
 }
@@ -300,9 +298,9 @@ a, .btn {
 /* nav toggle */
 .navToggle {
 	display: block;
-	padding: 15px 12px;
-	width: 18px;
-	height: 2px;
+	padding: 15px 5px;
+	width: 25px;
+	height: 3px;
 	box-sizing: content-box;
 	background-clip: content-box;
 	-webkit-transition: background-color 500ms ease-in-out 250ms;
@@ -319,7 +317,7 @@ a, .btn {
   position: relative;
   content: "";
   display: block;
-  width: 18px;
+  width: 25px;
   height: 2px;
   background-color: #f6f3f3;
   -webkit-transition: transform 500ms ease-in-out;
