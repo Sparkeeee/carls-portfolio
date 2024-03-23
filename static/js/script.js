@@ -36,6 +36,7 @@ $(document).ready(function() {
   $('.navToggle').on('click', function (e) {
     e.preventDefault();
     $('body').toggleClass('navToggleActive');
+    $('.navToggle').toggleClass('active');
   });
 
   // Handle fixed header on scroll

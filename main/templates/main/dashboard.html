@@ -6,18 +6,20 @@
 <section>
   <div class="innerPageBannerCol">
     <div class="container">
-      <div class="row g-3 g-md-3 align-items-center">
+      <div class="row g-3 g-md-3 text-center">
         <div class="col-md-8">
           <div class="bannerContent">
             <h2>Make your updates here</h2>
           </div>
         </div>
-        <div class="col-md-2 offset-2">
+        <div class="col-md-2">
           <a href="{% url 'admin:index' %}" class="btn btnPrimary">Go to Admin</a>
         </div>
       </div>
-      <div class="row pt-3">
+      <div class="row pt-3 text-center">
+        <div class="col">
         <p class="pt-3">This is a quick and nicer alternative to the admin panel. <br> With space for extras.</p>
+      </div>
       </div>
     </div>
   </div>
@@ -27,7 +29,7 @@
   <div class="lighterBg">
     <div class="container-xl">
       <div class="row">
-        <h4 class="col-6 offset-3 pt-2 pb-2 text-center text-decoration-underline" id="add-new-entry">Add or Edit a Portfolio exhibit below.</h4>
+        <h4 class="col pt-2 mt-2 pb-2 text-center text-decoration-underline" id="add-new-entry">Add or Edit a Portfolio exhibit below.</h4>
         <div class="dropdown">
           <button class="col-8 offset-2 mt-3 mb-3 btn btnPrimary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Choose a portfolio
@@ -44,7 +46,7 @@
           </ul>
         </div>
       </div>
-      <div class="col">
+      <div class="col p-3">
         <form id="UpdatePortfoliosForm" method="POST" action="{% url 'main:dashboard' %}" enctype="multipart/form-data">
           {% csrf_token %}
           <!-- Add a hidden field to indicate the operation -->

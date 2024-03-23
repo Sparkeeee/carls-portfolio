@@ -38,7 +38,7 @@ Start Content
 <section>
   <div class="bannerSection weather-card mt-2">
     <div class="container">
-      <div class="row g-4 g-md-3  align-items-center">
+      <div class="row g-4 g-md-3  align-items-center mt-2">
         <div class="col-md-auto">
           <div class="bannerUserImg mt-2">
             <img src="{{me.userprofile.image.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
@@ -188,7 +188,7 @@ Start Content
   <div class="sectionSpace pt-0">
     <div class="container">
       <div class="row">
-        <div class="col text-center">
+        <div class="col">
           <h4 class="lgTitle pb-3">Coding Skills</h4>
           <div class="row">
             <div class="col-2">
@@ -197,7 +197,7 @@ Start Content
                 {% if sk.is_key_skill %}
                 <div class="keySkillCard">
                   {% if sk.image %}
-                  <div class="ksIconCol pb-2.5 ">
+                  <div class="ksIconCol">
                     <img src="{{sk.image.url}}" alt="...">
                   </div>
                   {% endif %}
@@ -214,7 +214,7 @@ Start Content
                 <div class="progressCol">
                   <span class="progressLbl"><h5>{{sk.name}}</h5></span>
                   <div class="row g-2 align-items-center">
-                    <div class="col">
+                    <div class="col ml-2">
                       <div class="progress progressStyle">
                         <div class="progress-bar" role="progressbar" style="width: {{sk.score}}%" aria-valuenow="{{sk.score}}" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
@@ -237,7 +237,7 @@ Start Content
 
 
 <section>
-  <div class="sectionSpaceSm lighterBg">
+  <div class="sectionSpaceSm lighterBg mr-2">
     <div class="container">
       <div class="row pb-3">
         <div class="col">
