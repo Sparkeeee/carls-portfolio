@@ -83,6 +83,10 @@ These User stories have been used to help structure the direction of this projec
 
 - As a ** Site User** I can **upload my contact details and a message **, so that **I can be reached by Carl and explain my interest **.
 
+   <p align="center">
+<img src="KANBAN PIC TO BE ADDED" width="100%" height="100%">
+</p>
+
 #
 # Scope
 
@@ -93,6 +97,9 @@ These User stories have been used to help structure the direction of this projec
 1. **Navigation Bar**
    - The navigation bar appears on every page so users can easily navigate through the site.
    - Navigation bar has links for 'Home', 'Portfolio', 'Blog', 'Contact' and 'Login(superuser only)'. As a logged in superuser (site owner) there is nav link to 'Dashboard' and 'Login' is replaced by 'Logout'. The site's Logo acts as a universal link back to the main home/page across the site also.
+<p align="center">
+<img src="static/images/pp-logo.PNG" width="100%" height="100%">
+</p>
    - The navigation links appear in the nav bar to the right hand side on screens above 767px viewport widths. Below that width the navbar collapses into a 'hamburger' style toggle icon, which when clicked, calls a drop down style navigation menu to appear to the left of the viewport.
    - Further forms of Navigation outside of the NavBar itself are detail view pages for Blog articles and Portfolio entries, which are accessed from title based links that are dynamically generated from the relevant object's properties in the databse. The site owner in the Dashboard Page has a handy button 'Admin' which takes them to Django's built in admin area.
    - The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
@@ -105,8 +112,95 @@ These User stories have been used to help structure the direction of this projec
 </p>
 
    - Other links icludes email links in the sites footer bar and on the contact page. Clicking on the email links invokes a 'mailto' function that calls up options for which email provider the site user would like to use and populates the email services address bar with my email address to facilitate easy access to email.
-   - External links are generated dynaically for Portfolio entries and populate in the Portfolio detail pages, these take the browser to live deployments of the site being showcased.  The footer currently also has a link to the site owners Github profile.
 
-   <p align="center">
+  <p align="center">
 <img src="static/images/PPFooterStrip.PNG" width="100%" height="100%">
 </p>
+
+   - External links are generated dynaically for Portfolio entries and populate in the Portfolio detail pages, these take the browser to live deployments of the site being showcased.  The footer currently also has a link to the site owners Github profile.
+
+2. **Landing Page Banner Area - Portrait, Bio, Buttons with Swirling Background**
+   - The landing area features a screen with a Welcome, a portrait photo of myself as the site and business owner, a quick intro text to orient the user and a few immediate calls to action - Download CV (Button) and Contact (Button). The backfrop uses houdini CSS rotating gradient styling to form an attractive feature, in otherwise blank space, facilitating an uncluttered yet attractive appearance.
+
+  <p align="center">
+<img src="static/images/pp-landingpage.PNG" width="100%" height="100%">
+</p>
+
+3. **Testimonials Section - Slider of promotional reviews**
+   - The Testimonials sections is placed directly below the banner area to inspire early confidence in the visitor. The use of a manual slider encourages engagement and gives the reader the choice of time it taskes to read each review, as opposed to the use of an automated scrolling 'conveyor belt' of reviews. These have a personable and human quality, being from individuals.
+
+    <p align="center">
+<img src="static/images/pp-testi.PNG" width="100%" height="100%">
+</p>
+
+4. **Certificates Section - Manual slider of visible accreditations**
+   - As with the Testimonials, manual slider lets users peruse at their own pace. The certificates being placed here attempt to reinforce a growing sense of confidence in the reader as they scroll down the page. These show more formal kinds of recognition.
+
+    <p align="center">
+<img src="static/images/pp-certi.PNG" width="100%" height="100%">
+</p>
+
+5. **Featured Work Section - Clickable Briefs with images of completed projects**
+   - This is a list view of the portfolio projects currently on the site. These feature an image, clickable (and hoverable) links to more details about that project on its own page for further reading and exploration via external links there.
+
+    <p align="center">
+<img src="static/images/pp-features.PNG" width="100%" height="100%">
+</p>
+
+6. **Skills Section - Icons and Labelled Progress Bars**
+   - This section shows the most pertinent tech stack of the site owner. Icons of the individual technologies are used as an attractive 'key' to the left of the labelled progress bars to the right. These are updateable in admin area as the site owner's skills change and develop. These aim to attractively give an honest portrayal of tech abilities, which may be of especial importance to recruiters looking at the site, so that their expectations are realistic when contacting.
+
+    <p align="center">
+<img src="static/images/pp-skills.PNG" width="100%" height="100%">
+</p>
+
+7. **Recent Posts - Slider view of Blog posts currently available**
+   - These tiles have clickable (and hoverable) links to articles. This feature is currently being used to convey information, a sense of the owner's personality and also offer details about services not currently covered in other areas of the site.
+
+    <p align="center">
+<img src="static/images/pp-recentposts.PNG" width="100%" height="100%">
+</p>
+
+### **Portfolio Page**
+    - This page simply comprises an attractively staggered tiling layaout of the items that users can find out more about by clicking through to the details by hovering over the images which are each hoverable links in themselves. Images here are given more space than in the homepage list view, so that people can see the kind of aesthetic quality of the site owners recent projects, even if they do not want to know more about each one. If they do want to explore further they can click on them to read more into the projects and from there click to any of the sites that are currently live. 
+    
+    These provide links to detail view if users have not scrolled down the long homepage but rather gone straight towards Portfolio via the Navbar.
+
+<p align="center">
+<img src="static/images/pp-portipage.PNG" width="100%" height="100%">
+</p>
+
+### **Blog Page**
+    - Almost identical to the Portfolio page this Blog page simply comprises an attractively staggered tiling layaout of the items that users can find out more about by clicking through to the details by hovering over the images which are each hoverable links in themselves. These links go to detail views if users have not scrolled down the long homepage but rather gone straight towards Blog via the Navbar. 
+    
+    Images here are given more space than in the homepage list view. From here, users who want to explore further can click on them to read the articles themselves. 
+
+ <p align="center">
+<img src="static/images/pp-blogspage.PNG" width="100%" height="100%">
+</p>
+
+### **Contact Page**
+    - This page provides an attractive, yet simple form layout for users to be able to send a message and their contact details to the site owner, such as for making enquiries relating to hiring them for a project. There is also an upfront and obvious link providing alternative means of emailing the site owner, if that is preferable to the user. This hoverable link nactivates a 'mailto' html function, calling up the user's email provider as a window and populating the address bar of the email with the site owner's email address.
+
+<p align="center">
+<img src="static/images/pp-contactpage1.PNG" width="100%" height="100%">
+</p>
+
+<p align="center">
+<img src="static/images/pp-contactpage2.PNG" width="100%" height="100%">
+</p>
+
+    Upon submission of the form a popup appears saying 'Thank you. I will be in touch soon.' to alert the user that submission has occured.
+
+<p align="center">
+<img src="static/images/popup-contactform.PNG" width="100%" height="100%">
+</p>
+
+### **Login Page**
+    - This comprises a simple form for the site owner to fill in username and password which have been formerly set using:-
+     ```console
+     python3 manage.py createsuperuser
+     ```
+<p align="center">
+<img src="static/images/pp-login.PNG" width="100%" height="100%">
+</p> 
