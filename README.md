@@ -205,6 +205,58 @@ These User stories have been used to help structure the direction of this projec
      ```console
      python3 manage.py createsuperuser
      ```
+    - Upon submission the site owner is welcomed back with an alert and the Navbar changes to show different options.
+
 <p align="center">
 <img src="static/images/pp-login.PNG" width="100%" height="100%">
 </p> 
+
+<p align="center">
+<img src="static/images/pp-welcomeback.PNG" width="100%" height="100%">
+</p>
+
+<p align="center">
+<img src="static/images/loggedinnav.PNG" width="100%" height="100%">
+</p>
+
+### **Dashboard Page**
+1. **Page Info**
+   - This page is purely for the use of the site owner and comprises the first implementation of CRUD functionality on the site. CRUD is an acronym for Create, Retrieve, Update, Delete and makes full use of database driven functionality. This was a coere assessment criteria for this project at it's inception. This functionality is fulfilled by the use of a few interactive functional items which comprise the basic system of the dashboard interface. 
+
+<p align="center">
+<img src="static/images/dashpage1.PNG" width="100%" height="100%">
+</p>
+
+
+2. **Creation and Editing Form**'
+   - The form fields being based on the Portfolio Model in the project's 'main/models.py' file allow the user to input the required info to create a new portfolio entry in the form of text entries for a portfolio item's 'name', 'description', 'body'(the main blurb about the website being featured), 'URL'(external link to site). An image file can also be uploaded here from the user's hardware device.
+
+   This form is also used for editing elements of an esisting portfolio entry, where the form fields are populated with data retrieved from the database that reflects the portfolio chosen from the drop down menu that is selected via a dropdown menu. This dropdown menu is accessed by clicking on the button above the form.
+
+3. **Portfolio Choice Button**
+   - Above the portfolio entries management form is a large button that has a dropdown icon on it and reads 'Choose a Portfolio'. Ehen clicked a dropdown menu of hoverable and clickable links appear in the menu, reflecting active, current portfolio items that can be edited.
+
+<p align="center">
+<img src="static/images/dashpage2.PNG" width="100%" height="100%">
+</p>
+
+4. **Submit Buttom**
+   - This button commite changes made to the database for reflection in the content that populates the website's relevant pages
+
+<p align="center">
+<img src="static/images/dashpage3.PNG" width="100%" height="100%">
+</p>
+
+5. **Delete Buttoms**
+   - These buttons are coloured red to reflect their potentially 'dangerous' nature. The buttons populate the bottom of the page dynamically and allow whole entries to be deleted from the database permaneently.
+
+6. **Go To Admin Button**
+   - Toward the top and right of the page is this button, allowing clickable access to the django admin area, without the need to manually alter the url in the address bar each time.
+
+
+## Design
+
+### Imagery
+- 
+
+    
