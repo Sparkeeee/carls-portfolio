@@ -171,6 +171,8 @@ These User stories have been used to help structure the direction of this projec
 </p>
 
 ### **Blog Page**
+
+1. **Page Info**
     - Almost identical to the Portfolio page this Blog page simply comprises an attractively staggered tiling layaout of the items that users can find out more about by clicking through to the details by hovering over the images which are each hoverable links in themselves. These links go to detail views if users have not scrolled down the long homepage but rather gone straight towards Blog via the Navbar. 
     
     Images here are given more space than in the homepage list view. From here, users who want to explore further can click on them to read the articles themselves. 
@@ -180,6 +182,7 @@ These User stories have been used to help structure the direction of this projec
 </p>
 
 ### **Contact Page**
+1. **Page Info**
     - This page provides an attractive, yet simple form layout for users to be able to send a message and their contact details to the site owner, such as for making enquiries relating to hiring them for a project. There is also an upfront and obvious link providing alternative means of emailing the site owner, if that is preferable to the user. This hoverable link nactivates a 'mailto' html function, calling up the user's email provider as a window and populating the address bar of the email with the site owner's email address.
 
 <p align="center">
@@ -197,6 +200,7 @@ These User stories have been used to help structure the direction of this projec
 </p>
 
 ### **Login Page**
+1. **Page Info**
     - This comprises a simple form for the site owner to fill in username and password which have been formerly set using:-
      ```console
      python3 manage.py createsuperuser
