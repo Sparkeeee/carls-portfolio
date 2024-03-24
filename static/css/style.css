@@ -512,6 +512,15 @@ a, .btn {
   
 }
 
+.outbound-link {
+  color:aqua;
+}
+
+.outbound-link:hover {
+  color: var(--baseColor);
+  background-color: var(--lightBg);
+}
+
 .dropdown-menu a:hover {
   background-color:#3D0048;
   color: white;
@@ -576,11 +585,17 @@ body.navToggleActive {
 }
 
 /* footer */
+/* .foot-wrapper{
+  min-height: calc(100vh - 107px)
+} */
 
+  
 footer{
+  /* height: 6rem; */
   color: var(--lightBg);
   background-color: var(--baseColor);
   font-family:var(--baseFont);
+  align-items: center;
 }
 
 footer a {
@@ -746,6 +761,7 @@ footer a:hover {
 
 @media (max-width:767px) {
   .navCollapseCol {
+    display: none;
     position: fixed;
     overflow: none;
     top: 0;
@@ -763,6 +779,7 @@ footer a:hover {
     transition: all 300ms ease-in-out 0s;
   }
   .navToggleActive .navCollapseCol {
+    display: flex;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);

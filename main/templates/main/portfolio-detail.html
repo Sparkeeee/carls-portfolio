@@ -29,12 +29,12 @@ Start Content
 ================================= -->
 {% block content %}
 <section>
-  <div class="innerPageBannerCol">
+  <div class="innerPageBannerCol  weather-card">
     <div class="container mt-4">
       <div class="row g-4 g-md-3  align-items-center">
-        <div class="col-md-6">
+        <div class="col-auto">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-md-3">{{object.name}}</h1>
+            <h1 class="xlTitle pb-2  text-center">{{object.name}}</h1>
           </div>
         </div>
       </div>
@@ -47,10 +47,14 @@ Start Content
     <div class="container">
       {{object.body|safe}}
     </div>
+    <div class="row text-center mt-5">
+      <div class="col">
+        <a href="{{ object.url }}" class="outbound-link" target="_blank" rel="noopener">Click here to visit the website</a>
+      </div>
+    </div>
   </div>
 </section>
 <!-- ================================
 End Content
 ================================= -->
 {%endblock%}
-    
