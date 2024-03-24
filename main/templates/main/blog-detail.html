@@ -37,18 +37,18 @@ Start Content
       <div class="row g-4 g-md-3  align-items-center">
         <div class="col-md-6">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-md-3">{{object.name|title}}</h1>
+            <h1 class="xlTitle">{{object.name|title}}</h1>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-auto">
           <div class="authorCol">
-            <h4 class="smTitle pb-3">{{object.author|title}}</h4>
+            <h4 class="smTitle pb-1">{{object.author|title}}</h4>
           </div>
         </div>
         <div class="col-md">
-          <h4 class="smTitle pb-3">{{object.timestamp.date}}</h4>
+          <h4 class="smTitle pb-1">{{object.timestamp.date}}</h4>
         </div>
       </div>
     </div>
@@ -58,10 +58,20 @@ Start Content
 <section>
   <div class="sectionSpaceSm">
     <div class="container">
-      {{object.body|safe}}
+      <!-- Render the main text of the blog -->
+      {{ object.body|safe }}
+    </div>
+    <div class="container">
+      <!-- Render the URLField as a clickable link -->
+      <div class="row">
+        <div class="col">
+          <a href="{{ object.url }}">Click here to visit the website</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 {% endblock %}
 <!-- ================================

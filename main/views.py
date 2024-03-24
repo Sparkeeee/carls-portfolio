@@ -113,7 +113,7 @@ class PortfolioDataView(View):
             'body': portfolio.body,
             'url': portfolio.url,
             
-            # Include other fields as necessary
+            
         }
         return JsonResponse(data)
 
@@ -124,6 +124,7 @@ class PortfolioDeleteView(LoginRequiredMixin, DeleteView):
 class PortfolioDetailView(DetailView):
     model = Portfolio
     template_name = "main/portfolio-detail.html"
+    fields = ['name', 'description', 'body', 'url', 'image']
 
 class BlogView(ListView):
     model = Blog

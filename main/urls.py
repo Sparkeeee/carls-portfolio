@@ -1,6 +1,6 @@
 from django.urls import path, include
 from . import views
-from .views import PortfolioCreateView, portfolio_update_view, PortfolioDeleteView, PortfolioDataView
+from .views import PortfolioCreateView, portfolio_update_view, PortfolioDeleteView, PortfolioDataView, PortfolioDetailView
 from .views import dashboard_view
 from .views import custom_login
 
