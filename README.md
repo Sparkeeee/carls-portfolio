@@ -300,4 +300,189 @@ These User stories have been used to help structure the direction of this projec
 #
 # Structure
 
+So far this MVP website is made from one app called - main. Future development to include a messenger using channels and redis would necessitate use of a second app. Currently the site does not wander away from the core structure visible in the Navbar.
 
+The website is quite simple structurally and considerable flexibility over exact layout was afforded in this case by the site developer also being the client! 
+
+Wireframes were built for this project at the start to aid in conceptualisation and visualisation. they can be found here. 
+- [Wireframes](assets/documents)
+
+# Database Schema
+
+<p align="center">
+<img src="static/images/ERD.PNG" width="75%" height="75%">
+</p>
+
+- The database used is a free limited database from [Neon](https://neon.tech/)
+
+## Technologies Used
+
+### Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://www.javascript.com/)
+- [Python](https://www.python.org/)
+
+ ## Frameworks, Libraries & Programs Used
+
+[GitHub](https://github.com/) - GitHub is a web-based platform for version control using Git, enabling collaborative software development and hosting of code repositories. GitHub connects to GitPod and Heroku. *****ADD HOW IT HELPED HERE ON EACH LINK****
+
+[GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
+
+[Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
+
+[Django](https://www.djangoproject.com/) - Django is a high-level web framework for building web applications rapidly with a clean and pragmatic design.
+
+[Neon](https://neon.tech/) - Neon is a hosted PostgreSQL database service that can be seamlessly integrated with Django applications, providing scalable and reliable database solutions.
+
+[Gunicorn](https://gunicorn.org/) - Gunicorn is a pure-Python HTTP server for WSGI applications.
+
+[Dj Database URL](https://pypi.org/project/dj-database-url/) - This allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
+[Bootstrap](https://getbootstrap.com/) - Bootstrap is a front-end framework for developing responsive and mobile-first websites quickly and efficiently.
+
+[Cloudinary](https://cloudinary.com) - Cloudinary is a cloud-based media management platform that offers solutions for storing, optimizing, and delivering images and videos for web and mobile applications.
+
+[Summernote](https://summernote.org/) - Summernote is a Django app that enables users to easily integrate a rich text editor into their web applications, enhancing event creation and description functionality.
+
+[DALL-E3](https://openai.com/) - DALL-E3 is an advanced AI model developed by OpenAI that generates images from textual descriptions.
+
+[TinyPNG](https://tinypng.com/) - TinyPNG is a website that offers image compression services to optimize image files for faster loading on webpages while maintaining visual quality.
+
+[Google Fonts](https://fonts.google.com/https://fonts.google.com/) - Google Fonts is a collection of free, open-source fonts that can be easily integrated into websites and other digital projects to enhance typography.
+
+[Font Awesome](https://fontawesome.com/) - Font Awesome is a library of scalable vector icons that can be easily customized and used to enhance the visual appeal of websites and applications.
+
+[Beautify](https://www.jpkc.com/tools/beautify/) - Beautify is a code formatter tool that automatically formats code to improve readability and consistency.
+
+[Balsamiq](https://balsamiq.com/) - Balsamiq is a wireframing tool used for creating low-fidelity mockups of user interfaces, allowing for quick and easy visualization of design ideas.
+
+[Lucidchart](https://lucid.app) - Lucidchart is a web-based diagramming tool that allows users to create and collaborate on flowcharts, ERDs, and other visual representations of data and processes.
+
+[Am I Responsive](http://ami.responsivedesign.is/) - Am I Responsive is a web tool that allows users to quickly preview how their website appears on various devices and screen sizes, helping to ensure responsiveness and compatibility across platforms.
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The W3C CSS Validator is a tool used to check the validity and syntax of CSS code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
+
+[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - The W3C Markup Validator is a tool used to check the validity and syntax of HTML code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
+
+[JSHint](https://jshint.com/) - JSHint is a static code analysis tool used for checking JavaScript code for errors, potential problems, and stylistic inconsistencies.
+
+[Pep8ci](https://pep8ci.herokuapp.com/) - Pep8ci provides Python developers with a tool to check their code against the PEP 8 style guide for adherence to coding standards.
+
+[Lighthouse](https://developer.chrome.com/docs/lighthouse) - an open-source tool used for auditing web page quality, including performance, accessibility, SEO, and cross-browser testing.
+
+# Testing
+
+## User Story Testing
+
+### **Testing Users Stories form (UX) Section**
+
+
+### Validator Testing
+
+<!-- #### HTML Validator
+- [Results for event_list.html](#)
+- [Results for event_detail.html](#)
+- [Results for event_form.html](#)
+
+#### CSS Validator
+- [Results for styles.css](#)
+
+#### Browser Compatibility
+- Chrome Version 90.0.4430.212
+- Firefox Version 88.0.1
+- Safari on macOS Catalina (Safari Version 14.0.3)
+
+### Test Cases and Results
+- [Test Cases](#) -->
+
+## Bugs and Issues
+-
+
+# Deployment
+
+## Deploymrnt of this site was as follows
+
+- Here are the basic steps for deploying a project from Gitpod to Heroku and linking it to GitHub using manual deployment:
+
+## Prepare Your Project:
+
+- Ensure your project is ready for deployment and is working as expected locally.
+Make sure your project includes a requirements.txt file listing all the dependencies and a Procfile to specify the command to start the web server.
+
+## Create a GitHub Repository:
+
+- If you haven't already, create a GitHub repository for your project.
+Push your project code to this GitHub repository.
+
+## Set Up Heroku Account:
+
+- Sign up for a Heroku account.
+Install the Heroku CLI (Command Line Interface) on your local machine.
+
+## Create a New App on Heroku:
+
+- Log in to your Heroku account via the terminal using the Heroku CLI.
+Create a new app on Heroku using the heroku create command.
+
+## Link Heroku App to GitHub Repository:
+
+- Go to the "Deploy" tab of your Heroku app dashboard.
+Under "Deployment method," select GitHub as the deployment method.
+Search for your GitHub repository and connect it to your Heroku app.
+
+## Enable Manual Deployment:
+
+- Disable automatic deploys to ensure that changes pushed to your GitHub repository do not trigger automatic deployments on Heroku.
+You can do this by clicking on the "Enable Automatic Deploys" button and then turning off the "Wait for CI to pass before deploy" option.
+
+## Deploy Your App:
+
+- Manually deploy your app by clicking the "Deploy Branch" button in the "Manual deploy" section.
+Choose the branch you want to deploy from (e.g., main or master).
+
+## Wait for Deployment:
+
+- Wait for the deployment to finish, and check the logs for any errors.
+
+## Test Your Deployed App:
+
+- Once the deployment is complete, open your app using the provided Heroku URL and test that it works as expected.
+By following these steps, you can manually deploy your project from Gitpod to Heroku and link it to GitHub for version control.
+
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+- Any changes pushed to the master branch will take effect on the live project.
+
+The live link can be found [My Portfolio Repository](https://github.com/Sparkeeee/carls-portfolio).
+
+## How to clone the repository
+1. Go to the GitHub repository on GitHub.
+2. Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
+3. Open a GitBash terminal and navigate to the directory where you want to locate the clone.
+4. On the command line, type "git clone" then paste in the copied URL and press the Enter key to begin the clone process.
+
+## Django and Heroku 
+- I followed the Code Institute's Coding Coach instructional video to install and set up the Django framework.
+
+# Credits
+- [Django Crispy Forms] (https://django-crispy-forms.readthedocs.io/en/latest/install.html) - Instructional Documentation help
+- [Whitenoise Docs] (https://whitenoise.readthedocs.io/en/latest/django.html) - Instructional Documentation help
+- [Stack Overflow] (https://stackoverflow.com) - Crispy Forms instructions help
+- [Django Summernote Docs] (https://github.com/summernote/django-summernote) - Instructional Documentation help
+- [ChatGPT] (https://chat.openai.com) - Answering my many questions
+- [LeonardoAI](https://openai.com/dall-e-3) - Created all my ideas via text and translated them into an image
+
+## Media
+- The icon in the footer was taken from Font Awesome.
+- The fonts used were imported from Google Fonts.
+- My favicon was created by me fusing free clipart and altering/ transforming this in Photopea.
+- My main images were all created by LeonardoAI.
+
+## Acknowledgments
+- I am grateful to my mentor Ronan for providing valuable feedback.
+- Coding coach Kevin, for his very helpful SME videos.
+- I am grateful to my good friend Dave, who spent his time helping me fix a few css bugs.
+- Thanks to Amanda for support around the creation of this document.
+- Thanks to the whole Cohort and staff at Code Institute for bringing me to this stage.
+- Thanks to my supportive partner Heike.
